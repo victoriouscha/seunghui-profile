@@ -1,0 +1,586 @@
+/* ===== 차승희 프로필 페이지 — 공통 스타일 ===== */
+
+:root {
+  --ivory: #fff3e7;
+  --ivory-soft: #ffe8d4;
+  --paper: #fffaf5;
+  --ink: #4a382e;
+  --ink-soft: #8a7466;
+  --line: #f5ddc4;
+  --accent: #f0985f;
+  --accent-dark: #d97d42;
+  --accent-tint: #fdead4;
+  --shadow: 0 8px 24px rgba(74, 56, 46, 0.08);
+  --radius: 14px;
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: "Pretendard", "Noto Sans KR", -apple-system, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Noto Serif KR", serif;
+  color: var(--ink);
+  line-height: 1.4;
+  margin: 0 0 0.5em;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--ink-soft);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(248, 246, 241, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Noto Serif KR", serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.nav-brand .mono {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Noto Serif KR", serif;
+  font-size: 0.85rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: var(--accent-tint);
+  color: var(--ink);
+}
+
+.nav-links a.active {
+  background: var(--ink);
+  color: var(--ivory);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 96px 24px 64px;
+  text-align: center;
+}
+
+.avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  font-family: "Noto Serif KR", serif;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero .eyebrow {
+  display: inline-block;
+  color: var(--accent-dark);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 12px;
+}
+
+.hero .titles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0 24px;
+}
+
+.hero .titles span {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  box-shadow: var(--shadow);
+}
+
+.hero p.lead {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.02rem;
+}
+
+/* ---------- Sections ---------- */
+section {
+  padding: 56px 24px;
+}
+
+.section-head {
+  max-width: var(--max-width);
+  margin: 0 auto 32px;
+}
+
+.section-head .kicker {
+  color: var(--accent-dark);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.section-head h2 {
+  font-size: 1.7rem;
+  margin-bottom: 6px;
+}
+
+.section-head p {
+  margin: 0;
+}
+
+/* ---------- Cards / Grid ---------- */
+.grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.card .meta {
+  font-size: 0.85rem;
+  color: var(--accent-dark);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+/* stat cards on home */
+.stats {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.stat {
+  text-align: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 16px;
+  box-shadow: var(--shadow);
+}
+
+.stat .num {
+  font-family: "Noto Serif KR", serif;
+  font-size: 2rem;
+  color: var(--accent-dark);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.stat .label {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* CTA cards */
+.cta-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.cta-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: block;
+}
+
+.cta-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(31, 42, 56, 0.1);
+}
+
+.cta-card .num {
+  color: var(--accent);
+  font-family: "Noto Serif KR", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.cta-card h3 {
+  margin: 8px 0 6px;
+}
+
+.cta-card p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ---------- Tags ---------- */
+.tag-cloud {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background: var(--accent-tint);
+  color: var(--accent-dark);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 0.9rem;
+}
+
+/* ---------- Timeline ---------- */
+.timeline {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  border-left: 2px solid var(--line);
+  padding-left: 28px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 22px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -34px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.timeline-item .date {
+  font-size: 0.82rem;
+  color: var(--accent-dark);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.timeline-item .desc {
+  font-size: 0.94rem;
+  color: var(--ink);
+}
+
+/* ---------- Accordion ---------- */
+.accordion {
+  max-width: var(--max-width);
+  margin: 24px auto 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  font-family: "Noto Serif KR", serif;
+  font-size: 1rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.accordion-trigger .plus {
+  transition: transform 0.25s ease;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.accordion-trigger[aria-expanded="true"] .plus {
+  transform: rotate(45deg);
+}
+
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 24px;
+}
+
+.accordion-panel.open {
+  padding: 0 24px 24px;
+}
+
+.accordion-panel ul,
+.accordion-panel ol {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.accordion-panel li {
+  margin-bottom: 8px;
+}
+
+/* ---------- Contact / link list ---------- */
+.link-list {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.link-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.link-item .icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.link-item .label {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.link-item .sub {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  display: block;
+}
+
+.contact-primary {
+  max-width: var(--max-width);
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 24px;
+  margin-top: 40px;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+
+.footer-inner a {
+  color: var(--ink-soft);
+}
+
+.footer-inner a:hover {
+  color: var(--accent-dark);
+}
+
+/* ---------- Fade-in on scroll ---------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .nav-links {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    padding: 12px 24px 20px;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .hero {
+    padding: 64px 20px 48px;
+  }
+}
